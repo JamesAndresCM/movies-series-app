@@ -4,7 +4,7 @@
     <%= will_paginate @videos, class:'video', id: 'video', :page_links => false %>
   <% end %>
 </div>
-<%= link_to "Back To Chapters", series_path(@serie), class:'btn btn-primary' %>
+<%= link_to "Back To #{@serie.name}", series_path(@serie), class:'mt-2 btn btn-sm btn-primary' %>
 <div class="mt-4 container col-sm-10" style="background-color: white" id="disqus_thread"></div>
 <div id="disqus_thread"></div>
 <script>
