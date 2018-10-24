@@ -11,7 +11,7 @@
 
 ### Instalación
 
-- - Para utilizar los comentarios se debe crear el servicio en https://disqus.com/admin/create/ luego configurar el servicio de [disqus (url)(https://github.com/JamesAndresCM/movies-series-app/blob/master/app/views/videos/show.html.erb)
+- - Para utilizar los comentarios se debe crear el servicio en https://disqus.com/admin/create/ luego configurar el servicio de [disqus (url)](https://github.com/JamesAndresCM/movies-series-app/blob/master/app/views/videos/show.html.erb#L19)
 
 ```bash
 bundle install
@@ -24,10 +24,14 @@ rails server
 
 Para agregar contenido utilizar la cuenta de administrador: 
 
-User : admin@domain.com
-Pass : admin123
+- User : admin@domain.com
+- Pass : admin123
 
 url : http://localhost:3000/login
+
+- Sidekiq se utilizará en el proceso de subida de un video (convertirá formato a mp4), solo si el formato de video es diferente a mp4
+
+- Algunos formatos pueden no funcionar correctamente (codec video o audio), se recomienda utilizar mp4
 
 ***
 ### Screenshots
