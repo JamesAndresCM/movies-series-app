@@ -1,0 +1,142 @@
+@import "bootstrap";
+@import "bootstrap-datepicker";
+@import "gritter";
+@import "font-awesome";
+@import "owl.carousel";
+@import "owl.theme.green";
+@import "series";
+@import "pagination";
+
+
+
+.body-color{
+  background: #0f0c29; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0f0c29, #302b63, #24243e); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.log-color{
+ background: #1c92d2; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #1c92d2, #f2fcfe); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #1c92d2, #f2fcfe); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+.border-item{
+  background-color: #2E2F30;
+  border-radius: 5px;
+}
+
+.border-imagen-item{
+  height: 30px;
+  padding-top: 5px
+}
+
+.size-img{
+  margin-top: 20px;
+  width: 400px;
+  height: 300px;
+}
+
+.img-class-style{
+  width: 410px;
+  height: 280px;
+  padding: 5px 5px 5px;
+  border-radius: 8px;
+}
+
+.carousel-style{
+  background-color: #2E2F30; text-align: center;
+}
+
+.breadcrumb-dot .breadcrumb-item+.breadcrumb-item::before {
+    content: "•";
+    color: #408080;
+ 
+}
+
+.resp-video{
+  background-color: #2d3e50; padding: 1.5rem;
+  margin-right: 0;
+  margin-top: 50px;
+  margin-left: 0;
+  border-width: .2rem;
+}
+
+.message{
+  color: red;
+}
+
+.field-with-errors input {
+  border: 1px solid red;
+}
+
+.img_nav_profile{
+  width: 40px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.category-style{
+ background: #005aa7; 
+  background: -webkit-linear-gradient(to right, #005aa7, #fffde4); 
+  background: linear-gradient(to right, #005aa7, #fffde4); 
+
+}
+
+.nav-color{
+  background: #000046; 
+  background: -webkit-linear-gradient(to right, #000046, #1cb5e0); 
+  background: linear-gradient(to right, #000046, #1cb5e0);
+}
+
+.pagination {
+    background-color: currentColor;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+}
+
+
+.copyleft{
+  font: 18px Arial, sans-serif;
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+#button-scroll {
+  display: inline-block;
+  background-color: gray;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button-scroll::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button-scroll:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button-scroll:active {
+  background-color: #555;
+}
+#button-scroll.show {
+  opacity: 1;
+  visibility: visible;
+}

@@ -1,0 +1,14 @@
+<ol class="breadcrumb" style="padding: 6px; background-color: black">
+  <% 
+    letter = ('a'..'z').to_a
+    numbers = (0..9).to_a
+    letters = letter.concat(numbers).map(&:to_s)
+  %>
+  <% letters.each do |l| %>
+    <li style="margin: 0 auto; padding: 4px">
+      <a href="<%= search_letters_path(l.capitalize) %>" class="badge badge-light">
+        <%= l.capitalize %>
+      </a>
+    </li>
+  <% end %>
+</ol>

@@ -1,0 +1,9 @@
+<% unless @series.blank? %>
+  <div style="display: inline-block;" class="mt-5 container">
+    <div id="series" class="card-columns col-md-12" style="margin: 0 auto">
+      <%= render @series %>
+    </div>
+  </div>
+<% else %>
+  <%= render "partials/not_found" %>
+<% end %>

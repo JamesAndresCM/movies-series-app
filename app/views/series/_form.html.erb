@@ -1,0 +1,98 @@
+<div class="mt-5 col-md-7 card " style="margin: 0 auto">
+
+    <%= form_for(@series, local: true, validate: true) do |f| %>
+      <% if series.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(series.errors.count, "error") %> prohibited this series from being saved:</h2>
+
+          <ul>
+            <% series.errors.full_messages.each do |message| %>
+            <li>
+              <%= message %>
+            </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="col mt-2">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      
+      <div class="col mt-2">
+          <%= f.label :description %>
+          <%= f.cktext_area :description, ckeditor: { language: 'es' } , required: true %>
+      </div>
+      
+      <hr>
+      
+      <div class="col mt-2">
+        <% if @series.img.url.present? %>
+            Image
+          <%= image_tag(@series.img.url, class:'img_nav_profile') %>
+            <%= f.label :remove_img do %>
+              Remove Image
+              <%= f.check_box :remove_img %>
+            <% end %>
+          <% end %>
+          <hr>
+      
+        <%= f.label :image %>
+        <%= f.file_field :img, class: "form-control" %>
+      </div>
+
+      <div class="col mt-2">
+          <%= f.label :release_date %>
+          <%= f.text_field :release_date , placeholder: 'yyyy-mm-dd',id: 'datepicker', 
+          class: 'form-control datepicker' %>
+      </div>
+      
+      <div class="col mb-4 mt-2">
+          <%= f.label :category %>
+          <%= f.select :category_id, @categories,{prompt: 'Select Category'} , class: 'form-control', required: true  %>
+      </div>
+
+      <div class="col mb-4 mt-2">
+          <%= f.label :type %>
+          <%= f.select :type_id, @types,{prompt: 'Select Type'} , class: 'form-control', required: true %>
+      </div>
+
+
+  <div class="col card mb-4">
+    <div class="row">
+
+      <div class="col">
+        <span class="badge badge-pill badge-primary">Video</span>
+            <%= f.fields_for :videos do |video_form| %>
+              <%= render 'video_fields', f: video_form %>
+            <% end %>
+
+          <div>
+            <%= link_to_add_association 'Add Video', f, :videos, class: "mb-2 badge badge-pill badge-success" %>
+          </div>
+        </div>
+
+        <div class="col">
+            <%= f.fields_for :tags do |tag_form| %>
+              <%= render 'tag_fields', f: tag_form %>
+            <% end %>
+            <span class="badge badge-pill badge-primary">Tags</span>
+          <div>
+            <%= link_to_add_association 'Add Tag', f, :tags, class: "mb-2 badge badge-pill badge-success" %>
+          </div>
+        </div>
+
+      </div>
+  </div>
+
+
+
+<div class="mb-2" style="text-align: center">
+<%= button_tag "#{action_name.capitalize} Serie", class: 'btn-sm btn-success', 
+      data: { disable_with: "<i class='fa fa-refresh fa-spin'>
+      </i> Please wait..."} %>
+    </div>
+<% end %>
+
+</div>

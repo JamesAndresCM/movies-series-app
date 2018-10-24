@@ -1,0 +1,21 @@
+// Place all the styles related to the Series controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.style-chapter{
+  background: #373b44; 
+  background: -webkit-linear-gradient(to right, #373b44, #4286f4);
+  background: linear-gradient(to right, #373b44, #4286f4);
+}
+
+.color-chapter{
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.not-found{
+  background: #03001e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #03001e, #7303c0, #ec38bc, #fdeff9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 5px;
+}

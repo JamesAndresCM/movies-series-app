@@ -1,0 +1,42 @@
+<div class="mt-5 container color-chapter col-md-10">
+<div class="container">
+  <div style="float: left;" class="container col-md-8 owl-carousel owl-theme owl-loaded mt-5 carousel-style">
+    <% @last_series.each do |s| %>
+    <div>
+      <div class="item">
+        <a href="<%= series_path(s) %>"><img class="img img-fluid size-img" src="<%= s.img %>"></a>
+      </div>
+      <div class="item border-imagen-item">
+        <a href="<%= series_path(s) %>" style="color: white; text-decoration: none;"><%= s.name.capitalize %></a>
+      </div>
+    </div>
+    <%end%>
+  </div>
+
+ <div class="container col-md-4 mt-5 mb-4" style="text-align: center; float:right; display: inline-block">
+    <ul class="list-group">
+  <li class="list-group-item active style-chapter">Categories</li>
+
+  <% @categories.each do |c| %>
+  <li style="text-transform: capitalize; text-align: center; color: white" class="category-style list-group-item "><a style="text-decoration: none; color: white" href="<%= category_path(c.slug) %>"><%= c.name %></a>
+    <span class="badge badge-primary badge-pill"><%= c.series.count %></span>
+  </li>
+  <% end %>
+</ul>
+  </div>
+
+</div>
+
+<div style="display: inline-block;" class="mt-5 container">
+<div id="series" class="card-columns col-md-12" style="margin: 0 auto">
+  <%= render @series %>
+</div>
+</div>
+<br>
+<div class="mt-4 flickr_pagination">
+  <% unless @series.empty? or @series.nil? %>
+    <%= will_paginate @series %>
+  <% end %>
+</div>
+<br>
+</div>

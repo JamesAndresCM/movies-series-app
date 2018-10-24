@@ -1,0 +1,34 @@
+<nav class="sticky-top navbar navbar-expand-lg navbar-dark nav-color">
+  <a class="navbar-brand" href="<%= root_path %>">
+    <img src="<%= image_path('ico.png') %>" width="30" height="30">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link active" href="<%= root_path %>">Home</a>
+      </li>
+      <% if user_signed_in? %>
+      <li class="nav-item">
+          <li class="nav-item">
+            <a class="nav-link" href="<%= new_series_path %>">New Serie<i style="color: oldlace;
+    margin: 2px" class="fa fa-plus-circle"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= edit_user_registration_path %>">Profile <i style="color: white" class="fa fa-pencil-square-o"></i></a>
+        </li>
+      </li>
+       <li class="nav-item">
+          <a class="nav-link" data-method="delete" href="<%= destroy_user_session_path %>">Logout <i class="fa fa-sign-out" style="color: red"></i></a>
+        </li>
+        <% end %>
+    </ul>
+    <%= form_tag(search_serie_movie_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], data: {autocomplete_source: search_data_series_index_path}, required: true,placeholder: "Search serie or movie", style: 'border-radius: 5px; width: 300px' %>
+          <%= submit_tag "Search",class: 'btn-sm btn-primary',id: 'btn-search' %>
+    <% end %>
+  </div>
+</nav>

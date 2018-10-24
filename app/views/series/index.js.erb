@@ -1,0 +1,4 @@
+$(document).ready(function() {  
+  $('#series').append('<%= j render partial: "series", collection: @series %>');
+  $('.pagination').replaceWith('<%= escape_javascript will_paginate(@series) %>');
+});
