@@ -119,6 +119,9 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    file_validators (2.3.0)
+      activemodel (>= 3.2)
+      mime-types (>= 1.0)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
     friendly_id (5.2.4)
@@ -287,6 +290,7 @@ DEPENDENCIES
   cocoon
   coffee-rails (~> 4.2)
   devise
+  file_validators
   font-awesome-rails (~> 4.3)
   friendly_id (~> 5.2.0)
   gritter (= 1.2.0)

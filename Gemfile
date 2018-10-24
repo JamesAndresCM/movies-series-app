@@ -46,6 +46,7 @@ gem 'friendly_id', '~> 5.2.0'
 gem 'sidekiq'
 gem 'will_paginate'
 gem 'devise'
+gem 'file_validators'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
