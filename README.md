@@ -1,24 +1,39 @@
-# README
+# Movies-Series-App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Descripción 
+- Sistema que permite visualizar-subir archivos para reproducción de video.
 
-Things you may want to cover:
+### Características
+- Filtro por nombre, categoría, letra.
+- Subida de archivos mediante background (sidekiq)
+- Administración mediante usuario administrador 
+- Comentarios a través de Disqus
 
-* Ruby version
+### Instalación
 
-* System dependencies
+- - Para utilizar los comentarios se debe crear el servicio en https://disqus.com/admin/create/ luego configurar el servicio de [disqus (url)(https://github.com/JamesAndresCM/movies-series-app/blob/master/app/views/videos/show.html.erb)
 
-* Configuration
+```bash
+bundle install
+rails db:create
+rails db:migrate
+redis-server
+bundle exec sidekiq -C config/sidekiq.yml
+rails server
+```
 
-* Database creation
+Para agregar contenido utilizar la cuenta de administrador: 
 
-* Database initialization
+User : admin@domain.com
+Pass : admin123
 
-* How to run the test suite
+url : http://localhost:3000/login
 
-* Services (job queues, cache servers, search engines, etc.)
+***
+### Screenshots
 
-* Deployment instructions
-
-* ...
+<img src="https://i.imgur.com/lTLHdgY.jpg" />
+<br>
+<img src="https://i.imgur.com/Izvr5xV.png" />
+<br>
+<img src="https://i.imgur.com/HwO1NeY.png" />
