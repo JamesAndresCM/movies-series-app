@@ -11,12 +11,13 @@
 
 ### Instalación
 
-- Para utilizar los comentarios se debe crear el servicio en https://disqus.com/admin/create/ luego configurar el servicio de [disqus (url)](https://github.com/JamesAndresCM/movies-series-app/blob/master/app/views/videos/show.html.erb#L19)
+- Para utilizar los comentarios se debe crear el servicio en https://disqus.com/admin/create/ luego configurarlo [disqus (url)](https://github.com/JamesAndresCM/movies-series-app/blob/master/app/views/videos/show.html.erb#L19)
 
 ```bash
 bundle install
 rails db:create
 rails db:migrate
+rails db:seed
 redis-server
 bundle exec sidekiq -C config/sidekiq.yml
 rails server
