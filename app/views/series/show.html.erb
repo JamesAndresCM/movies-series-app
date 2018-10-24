@@ -22,7 +22,9 @@
       
     <h6>Category <span class="badge badge-pill badge-primary"><%= @series.category.name.capitalize %></span></h6>
     <h6>Release date <span class="badge badge-pill badge-success"><%= @series.release_date.strftime("%d/%m/%Y") %></span></h6>
+    <% if @series.type.name == "Serie" %>
     <h6>Chapters <span class="badge badge-pill badge-primary"><%= @series.videos.count %></span></h6>
+    <% end %>
   </div>
   </div>
 </div>
@@ -30,8 +32,8 @@
     <% if @series.tags.size > 0 %>
     <nav aria-label="breadcrumb">
       <ol style="background-color: black;" class="breadcrumb breadcrumb-dot">
-        <% @series.tags.each do |x| %>
-      <li class="breadcrumb-item"><a style="color: white; text-decoration: none" href="#"> <%= x.name %></a></li>
+        <% @series.tags.each do |tag| %>
+      <li class="breadcrumb-item"><a style="color: white; text-decoration: none" href="#"> <%= tag.name %></a></li>
       <% end %>
       </ol>
     </nav>
@@ -49,13 +51,14 @@
 
 <div class="container mt-3 mb-3 color-chapter" style="margin: 0 auto;">
   <br>
-  <% @series.videos.each.with_index(1) do |x,y| %>
+  <% @series.videos.each.with_index(1) do |video,index| %>
   <ol class="breadcrumb breadcrumb-dot">
-    <li class="breadcrumb-item"><span class="badge badge-pill badge-primary"><%= y %></span></li>
-    <li class="breadcrumb-item">Name <span class="badge badge-pill badge-dark"><%= x.name %></span></li>
-    <li class="breadcrumb-item">Duration <span class="badge badge-pill badge-dark"><%= x.duration %></span></li>
-    <li class="breadcrumb-item">Resolution <span class="badge badge-pill badge-dark"><%= x.resolution %></span></li>
-    <li class="breadcrumb-item"><a href="<%= series_video_path(@series.id,x,:page => y) %>" class="badge badge-success">Show <%= chapter %></a></li>
+    <li class="breadcrumb-item"><span class="badge badge-pill badge-primary"><%= index %></span></li>
+    <li class="breadcrumb-item">Name <span class="badge badge-pill badge-dark"><%= video.name %></span></li>
+    <li class="breadcrumb-item">Duration <span class="badge badge-pill badge-dark"><%= video.duration %></span></li>
+    <li class="breadcrumb-item">Resolution <span class="badge badge-pill badge-dark"><%= video.resolution %></span>
+    </li>
+    <li class="breadcrumb-item"><a href="<%= series_video_path(@series.slug, video,:page => index) %>" class="badge badge-success">Show <%= chapter %></a></li>
   </ol>
    <% end %>
 <br>
