@@ -107,6 +107,9 @@ class SeriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_series
       @series = Series.friendly.find(params[:id])
+    rescue => exception
+      flash[:notice] = "#{params[:id]} not found"
+      redirect_to root_path
     end
 
     def serie_category_type
