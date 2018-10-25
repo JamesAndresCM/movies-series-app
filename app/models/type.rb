@@ -1,6 +1,6 @@
 class Type < ApplicationRecord
   has_one :serie, dependent: :destroy
-
+  validates :name, presence: true, uniqueness: true
   before_validation :capitalize
 
   def capitalize

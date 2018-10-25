@@ -1,10 +1,9 @@
 class Category < ApplicationRecord
   has_many :series, dependent: :destroy
-  validates_presence_of :name, uniqueness: true
 
   extend FriendlyId
   friendly_id :name, use: :slugged
-
+  validates :name, presence: true, uniqueness: true
   before_validation :capitalize
 
   def capitalize
