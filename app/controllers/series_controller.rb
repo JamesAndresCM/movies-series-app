@@ -84,6 +84,7 @@ class SeriesController < ApplicationController
   def search_serie_movie
       if params[:search]
         sanitize = params[:search].parameterize
+        sanitize = sanitize.tr("-"," ") if sanitize.match("-")
         @series = Series.where("name ilike ?", "%#{sanitize}%")
         unless @series.empty?
           if @series.count == 1
