@@ -17,14 +17,23 @@ Type.create([
 
 Category.create([
   {
-      name: "comedia"
-    },
-      {
-        name: "drama"
-      },
-      {
-        name: "anime"
-      }
+  name: "comedia"
+  },
+  {
+    name: "drama"
+  },
+  {
+    name: "anime"
+  },
+  {
+    name: "suspenso"
+  },
+  {
+    name: "scifi"
+  },
+  {
+    name: "terror"
+  }
 ])
 
 User.create(email: "admin@domain.com", password: "admin123")
