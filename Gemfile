@@ -47,6 +47,9 @@ gem 'sidekiq'
 gem 'will_paginate'
 gem 'devise'
 gem 'file_validators'
+gem 'active_model_serializers'
+gem 'rack-cors'
+gem 'rack-attack'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
