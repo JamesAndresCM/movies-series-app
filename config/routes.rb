@@ -18,6 +18,12 @@ Rails.application.routes.draw do
   get 'category/:category', to: 'series#get_by_category', as: 'category'
   get 'search_serie_movie', to: 'series#search_serie_movie', as: 'search_serie_movie'
   root 'series#index'
-  match '*unmatched_route', :to => 'application#routing', via: [:all]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :api, :defaults => {:format => :json} do
+    namespace :v1 do
+      get 'series/index'
+    end
+  end
+
+  match '*unmatched_route', :to => 'application#routing', via: [:all]
 end
