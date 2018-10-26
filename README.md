@@ -42,3 +42,15 @@ Para agregar contenido utilizar la cuenta de administrador:
 <img src="https://i.imgur.com/Izvr5xV.png" />
 <br>
 <img src="https://i.imgur.com/HwO1NeY.png" />
+
+### API Rest
+
+# EndPoints
+
+- Devuelve todas las series ```localhost:3000/api/v1/series/index```
+- Paginación ```localhost:3000/api/v1/series/index?page=1```
+- Búsqueda de serie por nombre ```localhost:3000/api/v1/series/search?q=param```
+
+- Respuesta :
+
+<img src="https://i.imgur.com/s64PyqS.png" />
