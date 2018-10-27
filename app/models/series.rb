@@ -1,5 +1,5 @@
 class Series < ApplicationRecord
-
+  include Concerns::CapitalizeName
   extend FriendlyId
   friendly_id :name, use: :slugged
 
@@ -27,9 +27,5 @@ class Series < ApplicationRecord
 
   def should_generate_new_friendly_id?
     name_changed?
-  end
-
-  def capitalize
-    self.name = self.name.capitalize if self.name?
   end
 end
