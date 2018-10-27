@@ -4,7 +4,6 @@ class SeriesController < ApplicationController
   before_action :serie_category_type, only: [:create, :new, :update, :edit]
 
   # GET /series
-  # GET /series.json
   def index
     @last_series = Series.includes(:category).order_data.limit(3)
     @series = Series.includes(:category).paginate(page:params[:page],per_page:10)
@@ -12,7 +11,6 @@ class SeriesController < ApplicationController
   end
 
   # GET /series/1
-  # GET /series/1.json
   def show
   end
 
@@ -26,7 +24,6 @@ class SeriesController < ApplicationController
   end
 
   # POST /series
-  # POST /series.json
   def create
     
     @series = Series.new(series_params)
@@ -41,7 +38,6 @@ class SeriesController < ApplicationController
   end
 
   # PATCH/PUT /series/1
-  # PATCH/PUT /series/1.json
   def update
     respond_to do |format|
       if @series.update(series_params)
@@ -53,7 +49,6 @@ class SeriesController < ApplicationController
   end
 
   # DELETE /series/1
-  # DELETE /series/1.json
   def destroy
     @series.destroy
     respond_to do |format|
