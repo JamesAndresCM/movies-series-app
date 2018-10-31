@@ -4,10 +4,5 @@
     </div>
     <a href="<%= series_path(series) %>">
       <img class="img img-fluid article-img img-class-style" src="<%= series.img %>"/></a>
-    <% if user_signed_in? %>
-      <h5 style="text-align: center;">
-        <%= link_to fa_icon("pencil-square-o", style: "margin: 5px"),edit_series_path(series) %>
-        <%= link_to fa_icon("trash"),  series, method: :delete, data: { confirm: 'Are you sure?' }, style: 'color: red' %>
-      </h5>
-    <% end %>
+    <%= series_links(series) %>
 </div>

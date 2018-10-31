@@ -50,6 +50,7 @@ gem 'file_validators'
 gem 'active_model_serializers'
 gem 'rack-cors'
 gem 'rack-attack'
+gem 'draper'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
