@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Tag < ApplicationRecord
   belongs_to :series
 
@@ -5,6 +7,6 @@ class Tag < ApplicationRecord
   before_validation :tag_string
 
   def tag_string
-    self.name = "#" + self.name.capitalize if self.name?
+    self.name = '#' + name.capitalize if name?
   end
 end
