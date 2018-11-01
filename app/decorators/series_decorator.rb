@@ -25,18 +25,16 @@ class SeriesDecorator < Draper::Decorator
   end
 
   def series_tags
-    unless tags.size.zero?
-      h.content_tag(:nav, 'aria-label': 'breadcrumb') do
-        h.content_tag(:ol, style: 'background-color: black;', class: 'breadcrumb breadcrumb-dot') do
-          tags.map do |tag|
-            h.content_tag(:li, class: 'breadcrumb-item') do
-              h.content_tag(:a, tag.name, style: 'color: white; text-decoration: none', href: '#') do
-                tag.name.to_s
-              end.html_safe
+    h.content_tag(:nav, 'aria-label': 'breadcrumb') do
+      h.content_tag(:ol, style: 'background-color: black;', class: 'breadcrumb breadcrumb-dot') do
+        tags.map do |tag|
+          h.content_tag(:li, class: 'breadcrumb-item') do
+            h.content_tag(:a, tag.name, style: 'color: white; text-decoration: none', href: '#') do
+              tag.name.to_s
             end.html_safe
-          end.join.html_safe
-        end.html_safe
-      end
+          end.html_safe
+        end.join.html_safe
+      end.html_safe
     end
   end
 
