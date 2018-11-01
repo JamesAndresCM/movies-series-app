@@ -22,8 +22,8 @@ module SerieData
   end
 
   def set_index
-    @last_series = Series.includes(:category).order_data.limit(3)
+    @last_series = Series.order_data.limit(3)
     @series = Series.includes(:category).paginate(page: params[:page], per_page: 10)
-    @categories = Category.joins(:series).uniq
+    @categories = Category.eager_load(:series).uniq
   end
 end
