@@ -12,7 +12,7 @@
 
 //= require jquery
 //= require rails-ujs
-//= require jquery-ui/autocomplete
+//= require jquery-ui/widgets/autocomplete
 //= require jquery-ui
 //= require popper
 //= require cocoon
