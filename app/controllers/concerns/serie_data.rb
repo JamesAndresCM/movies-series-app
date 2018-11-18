@@ -23,7 +23,7 @@ module SerieData
 
   def set_index
     @last_series = Series.order_data.limit(3)
-    @series = Series.includes(:category).paginate(page: params[:page], per_page: 10)
+    @series = Series.includes(:category).paginate(page: params[:page], per_page: 10).order_data
     @categories = Category.eager_load(:series).uniq
   end
 end
