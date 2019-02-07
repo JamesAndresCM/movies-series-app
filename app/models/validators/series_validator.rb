@@ -6,7 +6,7 @@ module Validators
     included do
       validates :name, presence: true, uniqueness: true,
                        length: { in: 3..100 },
-                       format: { with: /\A[a-zA-Z0-9_ ]+\z/,
+                       format: { with: /\A[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_ ]+\z/,
                                  message: 'letters and numbers with space' }
       validates_presence_of :release_date
       validates :description, presence: true, length: { in: 3..300 }
