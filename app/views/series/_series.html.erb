@@ -1,8 +1,8 @@
 <div class="card color-chapter">
     <div class="card-header style-chapter" style="color: white; text-transform: capitalize;">
       <%= series.name %>
-    </div>
-    <a href="<%= series_path(series) %>">
-      <img class="img img-fluid article-img img-class-style" src="<%= series.img %>"/></a>
+    </div> 
+    <a href="<%= series_path(get_slug(series)) %>">
+      <img class="img img-fluid article-img img-class-style" src="<%= series.img.url %>"/></a>
     <%= series_links(series) %>
 </div>
