@@ -26,9 +26,9 @@
         </li>
         <% end %>
     </ul>
-    <%= form_tag(search_serie_movie_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], data: {autocomplete_source: search_data_series_index_path}, required: true,placeholder: "Search serie or movie", style: 'border-radius: 5px; width: 300px' %>
-          <%= submit_tag "Search",class: 'btn-sm btn-primary',id: 'btn-search' %>
+    <%= form_for :search_series, url: search_serie_movie_path, method: :get do |form| %>
+        <%= form.text_field :query, value: params[:search_series].presence && params[:search_series][:query], required: true,placeholder: "Search serie or movie", style: 'border-radius: 5px; width: 300px' %>
+          <%= form.submit "Search",class: 'btn-sm btn-primary' %>
     <% end %>
   </div>
 </nav>
