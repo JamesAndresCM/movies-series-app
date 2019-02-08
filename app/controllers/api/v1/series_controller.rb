@@ -9,7 +9,7 @@ class Api::V1::SeriesController < ApiController
     unless params[:q].blank?
       sanitize = params[:q].parameterize
       sanitize = sanitize.tr("-"," ") if sanitize.match("-")
-      series = Series.where("name ilike ?", "%#{sanitize}%")
+      series = Series.search_serie(sanitize)
       if series.blank?
         render json: { status: 201, msg: "Serie or Movie #{params[:q]} not found" }
       else
