@@ -3,7 +3,7 @@ module SerieData
 
   included do
     before_action :set_index, only: %i[index]
-    before_action :check_serie, only: %i[search_serie_movie]
+    #before_action :check_serie, only: %i[search_serie_movie]
   end
 
   def check_serie

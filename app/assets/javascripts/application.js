@@ -12,7 +12,6 @@
 
 //= require jquery
 //= require rails-ujs
-//= require jquery-ui/widgets/autocomplete
 //= require jquery-ui
 //= require popper
 //= require cocoon
@@ -55,7 +54,7 @@ $(document).on('turbolinks:load', function() {
         dots: true
     });
 
-    $('#search').autocomplete({
+    /*$('#search').autocomplete({
       open: function(){
         setTimeout(function () {
             $('.ui-autocomplete').css('z-index', 99999999999999);
@@ -68,7 +67,7 @@ $(document).on('turbolinks:load', function() {
 
     $('#search').autocomplete({
       source: $('#search').data('autocomplete-source')
-    });
+    });*/
 
 });
 
