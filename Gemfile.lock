@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/elastic/elasticsearch-rails.git
+  revision: 266b59c5e296abfc7a1a393fd130deb57d88e9ed
+  branch: master
+  specs:
+    elasticsearch-model (7.0.0)
+      activesupport (> 3)
+      elasticsearch (> 1)
+      hashie
+    elasticsearch-rails (7.0.0)
+
+GIT
   remote: https://github.com/23shortstop/carrierwave_backgrounder.git
   revision: b616ef10493c3913670485c5e15044f5d4e031a1
   specs:
@@ -135,6 +146,14 @@ GEM
       activemodel-serializers-xml (~> 1.0)
       activesupport (~> 5.0)
       request_store (~> 1.0)
+    elasticsearch (6.1.0)
+      elasticsearch-api (= 6.1.0)
+      elasticsearch-transport (= 6.1.0)
+    elasticsearch-api (6.1.0)
+      multi_json
+    elasticsearch-transport (6.1.0)
+      faraday
+      multi_json
     erubi (1.7.1)
     execjs (2.7.0)
     factory_bot (4.11.1)
@@ -142,6 +161,8 @@ GEM
     factory_bot_rails (4.11.1)
       factory_bot (~> 4.11.1)
       railties (>= 3.0.0)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
     file_validators (2.3.0)
       activemodel (>= 3.2)
@@ -153,6 +174,7 @@ GEM
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     gritter (1.2.0)
+    hashie (3.6.0)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -189,6 +211,7 @@ GEM
     minitest (5.11.3)
     msgpack (1.2.4)
     multi_json (1.13.1)
+    multipart-post (2.0.0)
     nio4r (2.3.1)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
@@ -347,6 +370,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   draper
+  elasticsearch-model!
+  elasticsearch-rails!
   factory_bot_rails
   file_validators
   font-awesome-rails (~> 4.3)
