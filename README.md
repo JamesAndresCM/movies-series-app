@@ -13,6 +13,8 @@
 
 - Para utilizar los comentarios se debe crear el servicio en https://disqus.com/admin/create/ luego configurarlo [disqus (url)](https://github.com/JamesAndresCM/movies-series-app/blob/master/app/views/videos/show.html.erb#L19)
 
+- Requiere instalar elasticsearch y posteriormente correr el servicio
+
 ```bash
 bundle install
 rails db:create
@@ -51,6 +53,4 @@ Para agregar contenido utilizar la cuenta de administrador:
 - Paginación ```localhost:3000/api/v1/series/index?page=1```
 - Búsqueda de serie por nombre ```localhost:3000/api/v1/series/search?q=param```
 
-- Respuesta :
-
-<img src="https://i.imgur.com/s64PyqS.png" />
+- Todo: Serializar la respuesta del endpoint y remover los serializers...
