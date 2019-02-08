@@ -8,9 +8,6 @@ Rails.application.routes.draw do
 
                                  
   resources :series do
-    collection do
-      get :search_data
-    end
     mount Ckeditor::Engine => '/ckeditor'
     resources :videos, only: [:show]
   end
