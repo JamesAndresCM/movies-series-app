@@ -7,14 +7,14 @@ class SeriesController < ApplicationController
   before_action :serie_category_type, only: %i[create new update edit]
 
   def index; end
-
   def show; end
+  def edit; end
 
   def new
     @series = Series.new
   end
 
-  def edit; end
+  
 
   def create
     @series = Series.new(series_params)
@@ -51,18 +51,14 @@ class SeriesController < ApplicationController
   end
 
   def search_serie_movie
-    if @series.count == 1
-      redirect_to series_path(@series[0][:slug])
-    else
-      render :search_movies_series
+    query = params[:search_series].presence && params[:search_series][:query]
+    if query
+      @series = Series.search_serie(query)
+      (redirect_to series_path(@series[0].id) if @series.count == 1) and return
+      (render :search_movies_series) and return
     end
   end
 
-  def search_data
-    sanitize = params[:term].parameterize
-    @series = Series.type_attr_serie('name', sanitize).order(:name)
-    render json: @series.map(&:name)
-  end
 
   private
 
