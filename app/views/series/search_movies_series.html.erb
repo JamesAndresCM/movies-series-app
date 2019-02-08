@@ -2,7 +2,7 @@
   <div style="display: inline-block;" class="mt-5 container">
     <div id="series" class="card-columns col-md-12" style="margin: 0 auto">
       <% cache @series do %>
-        <%= render @series, cached: true %>
+        <%= render partial: 'series', collection: @series, cached: true %>
       <% end %>
     </div>
   </div>
