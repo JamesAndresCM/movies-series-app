@@ -3,6 +3,7 @@
 class Series < ApplicationRecord
   include Concerns::CapitalizeName
   include Validators::SeriesValidator
+  include Searchable
 
   extend FriendlyId
   friendly_id :name, use: :slugged
